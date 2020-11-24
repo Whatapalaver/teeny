@@ -1,24 +1,23 @@
-# README
+# RAILS 6 Setup for BDD
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A very minimal setup of Rails to start building an app with BDD.
 
-Things you may want to cover:
+Has test gems installed with RSpec and Cucumber initialised.
+There is one rspec request test and a cucumber feature test, mainly implemented as a syntax example.
 
-* Ruby version
+I have hacked the generators.rb file to restrict file bloat. If you want to generate more than just request specs you may need to comment out some of the restrictions `config/initializers/generators.rb`
 
-* System dependencies
+## Before you start
 
-* Configuration
+- Use RVM to install Ruby 2.6.3
+- `bundle install`
+- `yarn`
+  
+## To Run
 
-* Database creation
+- `rails s`
 
-* Database initialization
+## To Test
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `rspec` to run the rspec request tests
+- `cucumber` to run the feature tests
