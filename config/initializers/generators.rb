@@ -4,6 +4,5 @@ Rails.application.config.generators do |g|
   view_specs: false,
   helper_specs: false,
   routing_specs: false,
-  request_specs: false,
   controller_specs: false
 end
