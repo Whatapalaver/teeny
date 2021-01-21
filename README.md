@@ -12,6 +12,18 @@ I have hacked the generators.rb file to restrict file bloat. If you want to gene
 - Use RVM to install Ruby 2.6.3
 - `bundle install`
 - `yarn`
+
+## Setup Database
+
+If you need to create the role 'teeny':
+
+- `psql -d postgres`
+- #`create role teeny login createdb;`
+- #`\q`
+
+Then setup db:
+
+- `rails db:setup`
   
 ## To Run
 
