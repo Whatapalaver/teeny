@@ -1,5 +1,13 @@
-<% if user_signed_in? %>
-  Welcome <%= current_user.username %>
-<% else %>
-  <p>Welcome. Please login or register to create a new link</p>
-<% end %>
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+  <h1 class="display-4 font-italic">Teeny URL Shortner</h1>
+  <p class="lead my-5">A tool to create teeny tiny urls. 
+  You can track the number of visits made to your shared links</p>
+  <hr class="my-4">
+  <% if user_signed_in? %>
+    <p class="lead">Welcome <%= current_user.username %></p>
+    <p>View Existing Link Stats</p>
+    <p>Create a new Link</p>
+  <% else %>
+    <p>Welcome. Please <%= link_to "Login", new_user_session_path %> or <%= link_to "Register", new_user_registration_path %> to create a new link</p>
+  <% end %>
+</div>
