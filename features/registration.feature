@@ -6,4 +6,4 @@ Feature: Registration
 Scenario: I register
   Given I am on the home page
   And I submit my registration
-  Then I should see confirmation that I have registered
+  Then I should see confirmation that I am logged in
