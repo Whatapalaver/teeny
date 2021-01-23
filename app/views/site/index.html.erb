@@ -1,1 +1,5 @@
-Welcome
+<% if user_signed_in? %>
+  Welcome <%= current_user.username %>
+<% else %>
+  <p>Welcome. Please login or register to create a new link</p>
+<% end %>
