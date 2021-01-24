@@ -31,5 +31,5 @@ When('I click on create teeny url') do
 end
 
 Then('I should see the create new link form') do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content("Create a New Teeny Link")
 end

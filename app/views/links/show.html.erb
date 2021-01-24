@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Your Teeny URL List</h2>
+<% for link in current_user.links %>
+  <ul>
+    <p><%= link.url %></p>
+    <li><%= link.slug %></li>
+  </ul>
+<% end %>
+
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>

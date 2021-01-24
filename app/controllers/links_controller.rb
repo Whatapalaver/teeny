@@ -25,7 +25,7 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.json
   def create
-    @link = Link.new(link_params)
+    @link = current_user.links.create(link_params)
 
     respond_to do |format|
       if @link.save
@@ -70,6 +70,6 @@ class LinksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def link_params
-      params.fetch(:link, {})
+      params.fetch(:link, {}).permit(:url, :slug)
     end
 end
