@@ -35,7 +35,7 @@ class LinksController < ApplicationController
       if @link.save
         flash[:notice] = 'Link was successfully created.'
         format.html { redirect_to action: "index" }
-        format.json { render :show, status: :created, location: @link }
+        format.json { redirect_to action: "index" }
       else
         format.html { render :new }
         format.json { render json: @link.errors, status: :unprocessable_entity }
