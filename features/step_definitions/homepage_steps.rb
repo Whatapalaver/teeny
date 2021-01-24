@@ -12,7 +12,8 @@ Given('I am not logged in') do
 end
 
 Then('I should see an invitation to login') do
-  expect(page).to have_content("Please login or register to create a new link")
+  expect(page).to have_content("Welcome. Please")
+  expect(page).to have_content("create a new link")
 end
 
 Given('I am logged in') do
