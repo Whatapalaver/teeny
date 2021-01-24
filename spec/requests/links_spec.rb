@@ -31,13 +31,6 @@ RSpec.describe "/links", type: :request do
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
-      link = Link.create! valid_attributes
-      get link_url(link)
-      expect(response).to be_successful
-    end
-  end
 
   describe "GET /new" do
     it "renders a successful response" do

@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :set_link, only: [:edit, :update, :destroy]
 
   # GET /links
   # GET /links.json
@@ -10,15 +10,12 @@ class LinksController < ApplicationController
 
   # GET /links/1
   def show
-
-  end
-
-  def go
     @link = Link.find_by_slug(params[:slug]) 
     render 'errors/404', status: 404 if @link.nil?
     @link.update_attribute(:click_count, @link.click_count + 1)
     observable_redirect_to @link.url
   end
+
 
   # GET /links/new
   def new
@@ -36,7 +33,8 @@ class LinksController < ApplicationController
 
     respond_to do |format|
       if @link.save
-        format.html { redirect_to @link, notice: 'Link was successfully created.' }
+        flash[:notice] = 'Link was successfully created.'
+        format.html { redirect_to action: "index" }
         format.json { render :show, status: :created, location: @link }
       else
         format.html { render :new }
@@ -50,7 +48,8 @@ class LinksController < ApplicationController
   def update
     respond_to do |format|
       if @link.update(link_params)
-        format.html { redirect_to @link, notice: 'Link was successfully updated.' }
+        flash[:notice] = 'Link was successfully created.'
+        format.html { redirect_to action: "index" }
         format.json { render :show, status: :ok, location: @link }
       else
         format.html { render :edit }

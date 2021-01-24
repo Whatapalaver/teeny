@@ -24,10 +24,14 @@ If you need to create the role 'teeny':
 Then setup db:
 
 - `rails db:setup`
+- `rails db:seed`
   
 ## To Run
 
 - `rails s`
+
+The DB has been seeded with a user: username = admin, email = admin@example.com, password = supersecurepass
+You can log in with these details to view some created links or register your own account to create your own links
 
 ## To Test
 
