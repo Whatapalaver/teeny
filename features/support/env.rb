@@ -5,6 +5,8 @@
 # files.
 
 require 'cucumber/rails'
+require 'capybara-screenshot/cucumber'
+require 'selenium-webdriver'
 
 # frozen_string_literal: true
 
@@ -58,3 +60,6 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+# Capybara.javascript_driver = :selenium_chrome_headless
+Capybara.javascript_driver = :selenium_chrome
+Capybara.asset_host = 'http://localhost:3000'

@@ -9,8 +9,15 @@ class LinksController < ApplicationController
   end
 
   # GET /links/1
-  # GET /links/1.json
   def show
+
+  end
+
+  def go
+    @link = Link.find_by_slug(params[:slug]) 
+    render 'errors/404', status: 404 if @link.nil?
+    @link.update_attribute(:click_count, @link.click_count + 1)
+    observable_redirect_to @link.url
   end
 
   # GET /links/new

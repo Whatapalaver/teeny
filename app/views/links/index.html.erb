@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Links</h1>
+<h1><%= current_user.username %>'s Links</h1>
 
 <table class="table table-dark">
   <thead>
     <tr>
-      <th scope="col">URL</th>
+      <th scope="col">Original URL</th>
       <th scope="col">Slug</th>
       <th scope="col">Teeny Link</th>
-      <th scope="col"></th>
+      <th scope="col">Click Count</th>
       <th scope="col"></th>
       <th scope="col"></th>
     </tr>
@@ -19,8 +19,8 @@
       <tr>
         <td><%= link.url %></td>
         <td><%= link.slug %></td>
-        <td><%=  %></td>
-        <td><%= link_to 'Show', link %></td>
+        <td><%= link_to short_path(link.slug), short_path(link.slug), id: "teeny_link" %></td>
+        <td class: "click_count"><%= link.click_count %></td>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
         <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

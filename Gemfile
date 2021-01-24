@@ -42,6 +42,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'capybara-screenshot'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'selenium-webdriver'
   gem 'cucumber-rails', require: false
