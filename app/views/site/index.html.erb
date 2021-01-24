@@ -5,8 +5,8 @@
   <hr class="my-4">
   <% if user_signed_in? %>
     <p class="lead">Welcome <%= current_user.username %></p>
-    <p>View Existing Link Stats</p>
-    <p>Create a new Link</p>
+    <%= button_to "View Existing Link Stats", class: "btn btn-primary btn-lg", :method => :get %>
+    <%= button_to "Create a Teeny URL", class: "btn btn-primary btn-lg", :method => :get %>
   <% else %>
     <p>Welcome. Please <%= link_to "Login", new_user_session_path %> or <%= link_to "Register", new_user_registration_path %> to create a new link</p>
   <% end %>
