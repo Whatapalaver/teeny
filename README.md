@@ -43,5 +43,5 @@ You can view the click stats as well
 
 - Followed a BDD approach with Cucumber & capybara.
 - Used this approach to [test for redirection to Original Url](https://makandracards.com/makandra/15217-test-redirects-to-an-external-url-with-cucumber-capybara)
-- Set up short url using a custom route but haven't fathomed how to show domain + path in view
+- Set up short url using a custom route ~~but haven't fathomed how to show domain + path in view~~
 - My click_count appears to be doubled

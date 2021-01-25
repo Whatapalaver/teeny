@@ -17,7 +17,7 @@
       <tr>
         <td><%= link.url %></td>
         <td><%= link.slug %></td>
-        <td><%= link_to short_path(link.slug), short_path(link.slug), id: "teeny_link" %></td>
+        <td><%= link_to short_url(link.slug), short_path(link.slug), id: "teeny_link" %></td>
         <td class: "click_count"><%= link.click_count %></td>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
         <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
